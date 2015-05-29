@@ -7,16 +7,46 @@
 //
 
 #import "AppDelegate.h"
+#import "MLTabbarVC.h"
+#import "NetManager.h"
+#import <AVOSCloud/AVCloud.h>
+
 
 @interface AppDelegate ()
-
+@property (strong,nonatomic)MLTabbarVC *mainTabViewController;
 @end
 
 @implementation AppDelegate
 
 
+-(MLTabbarVC*)mainTabViewController
+{
+    if(_mainTabViewController==nil)
+    {
+        _mainTabViewController=[[MLTabbarVC alloc]init];
+    }
+    return _mainTabViewController;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //AVOS Client
+    
+    
+    //AVOS Regist App Key
+//    [AVOSCloud setApplicationId:@"ka1tjr3fv7s50dwe7cw5ots6vxf4xo3gv09uc7yg6rm8i3j2"
+//                      clientKey:@"b2bsroi5b3908f4ovxvt34in7pgmnc8cgg5im3511a84ddak"];
+//    
+//    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+    
+   
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[SRLoginVC shareLoginVC]];
+    self.window.rootViewController=self.mainTabViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

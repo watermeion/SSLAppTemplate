@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MLTabbarVC.h"
 #import "NetManager.h"
-#import <AVOSCloud/AVCloud.h>
+
 
 
 @interface AppDelegate ()
